@@ -118,22 +118,16 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         <div class="w3-container">
           <h5 class="w3-opacity"><b>Bachelor’s Degree in computing</b></h5>
           <h6 class="w3-text-dark-grey"><i class="fa fa-calendar fa-fw w3-margin-right"></i>SEP 2019 - <span class="w3-tag w3-dark-grey w3-round">Current</span> </h6>
-          <p>Technological University Dublin – Tallaght campus<br>
-During the duration of my course I have learned advanced data structures and algorithms, understanding of a range of programming languages. I have also covered the frameworks covering the major language types for cloud and web development.
+          <p style="font-weight: bold;">Technological University Dublin – Tallaght campus<br></p>
+<p>During the duration of my course I have learned advanced data structures and algorithms, understanding of a range of programming languages. I have also covered the frameworks covering the major language types for cloud and web development.
+</p>
+<p style="font-weight: bold;">Module Results <br></p>
+<p>2nd year modules: Networking (C); Software Development (B); Discrete Mathematics (C); Information Security (D); Client-Side Web Development (C); Software Quality and Assurance (C+); Adv. Database Technologies (C+);
 </p>
           <hr>
         </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>London Business School</b></h5>
-          <h6 class="w3-text-dark-grey"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2013 - 2015</h6>
-          <p>Master Degree</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>School of Coding</b></h5>
-          <h6 class="w3-text-dark-grey"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2010 - 2013</h6>
-          <p>Bachelor Degree</p><br>
-        </div>
+        
+        
       </div>
 
     <!-- End Right Column -->
@@ -180,6 +174,42 @@ During the duration of my course I have learned advanced data structures and alg
   <a href="https://twitter.com/softdevoleg" target="_blank"<i class="fa fa-twitter fa-2x w3-hover-opacity"></i></a> ‎‏‏‎ ‎‏‏‎ ‎ ‎‏‏‎ ‎‏‏‎ ‎
 
 </footer>
+
+<script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000);    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 
 </body>
 </html>

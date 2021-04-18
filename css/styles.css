@@ -7,7 +7,7 @@ body, html {height: 100%}
   background-size: cover;
 }
 .bg-img{
-    background-image: url('img/background.jpg');
+    background-image: url('images/bg.jpg');
 }
 .w3-jumbo{
     color: white;
@@ -30,3 +30,10 @@ body, html {height: 100%}
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
+.showslide{
+    display: flex;
+    justify-content: center;
+    width: 1px;
+}
+    
