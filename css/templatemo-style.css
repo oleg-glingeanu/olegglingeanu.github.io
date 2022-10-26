@@ -9,7 +9,7 @@ https://templatemo.com/tm-458-lavish
 body
 {
 	background: #000000;
-	color: #999;
+	color: rgb(255, 255, 255);
 	font-family: 'Raleway', sans-serif;
 	font-size: 16px;
 	font-weight: 400;
@@ -171,7 +171,7 @@ h1,h2,h3,h4,h5
 /* start home */       
 #home
 	{
-        background: url('../images/home-bg.jpg');
+        background: url('../images/home-bgt.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         padding-top: 120px;
@@ -418,3 +418,25 @@ footer hr
         color: #D43F52;
     }
 /* end social icon */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+  }
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+}
+::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar {
+    width: 20px;
+  }

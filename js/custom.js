@@ -5,7 +5,7 @@ $(document).ready(function() {
 				'verticalCentered': false,
 				'scrollingSpeed': 600,
 				'autoScrolling': false,
-				'css3': true,
+				'css3': false,
 				'navigation': true,
 				'navigationPosition': 'right',
 			});

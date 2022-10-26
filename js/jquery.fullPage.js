@@ -94,7 +94,6 @@
             //scrolling
             css3: true,
             scrollingSpeed: 700,
-            autoScrolling: true,
             fitToSection: true,
             easing: 'easeInOutCubic',
             easingcss3: 'ease',
@@ -686,7 +685,7 @@
                     if(canScroll){
                         currentSection.addClass(ACTIVE).siblings().removeClass(ACTIVE);
 
-                        $.isFunction( options.onLeave ) && options.onLeave.call( leavingSection, leavingSectionIndex, sectionIndex, yMovement);
+                        $.isFunction( options.onLeave ) && options.onLeave.call( sectionIndex, yMovement);
 
                         $.isFunction( options.afterLoad ) && options.afterLoad.call( currentSection, anchorLink, sectionIndex);
 
@@ -716,7 +715,7 @@
                             //allows to scroll to an active section and
                             //if the section is already active, we prevent firing callbacks
                             if($(SECTION_ACTIVE_SEL).is(currentSection)){
-                                isResizing = true;
+                                isResizing = false;
                             }
                             scrollPage(currentSection);
                             isResizing = false;
