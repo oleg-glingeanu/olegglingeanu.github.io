@@ -1,49 +1,49 @@
-import './style.css'
-import * as THREE from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import * as dat from 'dat.gui'
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('main section[id]');
+const progressBar = document.querySelector('.scroll-progress span');
 
+function updateScrollState() {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  if (progressBar) {
+    progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+  }
 
-const scene = new THREE.Scene();
-const textureLoader = new THREE.TextureLoader();
-const normalTexture = textureLoader.load('./static/normal-map.png')
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({
-  canvas: document.querySelector('#the-canvas')
-})
-renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setSize( window.innerWidth, window.innerHeight);
-const geometry = new THREE.OctahedronGeometry(10, 0);
-const material = new THREE.MeshStandardMaterial();
-material.normalMap = normalTexture;
-material.color = new THREE.Color(0x0099e6);
-const octahedron = new THREE.Mesh( geometry, material);
-scene.add(octahedron);
-camera.position.setZ(30);
-const PointL = new THREE.PointLight(0xffffff);
-PointL.position.set(10,10,1);
-scene.add(PointL);
-
-const PointL2 = new THREE.PointLight(0xff6666);
-PointL2.position.set(-2,-5,1);
-scene.add(PointL2);
-
-const PointL3 = new THREE.PointLight(0xffffff);
-PointL3.position.set(-2,10,1);
-scene.add(PointL3);
-
-window.onresize = function(event) {
-  camera.aspect = window.innerWidth / innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, innerHeight);
-  renderer.setPixelRatio(window.devicePixelRatio);
-};
-
-function animate(){
-  requestAnimationFrame( animate );
-  renderer.render(scene, camera);
-  octahedron.rotation.x +=0.01;
-  octahedron.rotation.y +=0.001;
-  octahedron.rotation.z +=0.001;
+  sections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    const link = document.querySelector(`.nav-link[href='#${section.id}']`);
+    if (link) {
+      const active = rect.top <= 120 && rect.bottom > 120;
+      link.classList.toggle('active', active);
+    }
+  });
 }
-animate()
+
+function handleContactSubmit(event) {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const formData = new FormData(form);
+  const name = formData.get('name').trim();
+  const email = formData.get('email').trim();
+  const subject = formData.get('subject').trim() || 'Website contact request';
+  const message = formData.get('message').trim();
+
+  if (!name || !email || !message) {
+    alert('Please fill in your name, email, and message before sending.');
+    return;
+  }
+
+  const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+  const mailtoLink = `mailto:oleg.glingeanu@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailtoLink;
+}
+
+const contactForm = document.querySelector('#contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', handleContactSubmit);
+}
+
+window.addEventListener('scroll', updateScrollState);
+window.addEventListener('resize', updateScrollState);
+updateScrollState();

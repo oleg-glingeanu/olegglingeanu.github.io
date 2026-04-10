@@ -1,0 +1,32 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="glassGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#333333;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#222222;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="highlight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.2" />
+      <stop offset="30%" style="stop-color:#ffffff;stop-opacity:0.05" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+    </linearGradient>
+    <filter id="emboss" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="2" result="offset"/>
+      <feFlood flood-color="#ffffff" flood-opacity="0.1"/>
+      <feComposite in2="offset" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1920" height="1080" fill="#000000"/>
+  <path d="M 400 100 Q 500 80 600 100 Q 700 120 800 100 Q 850 90 900 110 L 900 160 Q 850 180 800 160 Q 700 140 600 160 Q 500 180 400 160 Q 350 170 300 150 L 300 100 Q 350 80 400 100 Z
+           M 300 200 Q 400 180 500 200 Q 600 220 700 200 Q 750 190 800 210 L 800 260 Q 750 280 700 260 Q 600 240 500 260 Q 400 280 300 260 Q 250 270 200 250 L 200 200 Q 250 180 300 200 Z
+           M 500 350 Q 600 330 700 350 Q 800 370 900 350 Q 950 340 1000 360 L 1000 410 Q 950 430 900 410 Q 800 390 700 410 Q 600 430 500 410 Q 450 420 400 400 L 400 350 Q 450 330 500 350 Z
+           M 200 500 Q 300 480 400 500 Q 500 520 600 500 Q 650 490 700 510 L 700 560 Q 650 580 600 560 Q 500 540 400 560 Q 300 580 200 560 Q 150 570 100 550 L 100 500 Q 150 480 200 500 Z"
+       fill="url(#glassGradient)" stroke="url(#highlight)" stroke-width="1" filter="url(#emboss)"/>
+</svg></content>
+<parameter name="filePath">c:\Users\olegg\Documents\GitHub\olegglingeanu.github.io\static\wallpaper.svg
